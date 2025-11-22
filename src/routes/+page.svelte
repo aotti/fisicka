@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import MainHome from "$lib/components/content/MainHome.svelte";
+
+</script>
+
+<!-- html head -->
+<svelte:head>
+    <title> Fisicka </title>
+</svelte:head>
+
+<div class="bg-darkgreen-2 text-white h-screen">
+    <MainHome />
+</div>
