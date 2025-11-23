@@ -1,5 +1,5 @@
 <script>
-    import MainHome from "$lib/components/content/MainHome.svelte";
+    import MainPage from "$lib/components/content/MainPage.svelte";
 
 </script>
 
@@ -8,6 +8,4 @@
     <title> Fisicka </title>
 </svelte:head>
 
-<div class="bg-darkgreen-2 text-white h-screen">
-    <MainHome />
-</div>
+<MainPage />
