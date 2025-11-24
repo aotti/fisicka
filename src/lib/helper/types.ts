@@ -5,6 +5,17 @@ export interface IMiscContext {
 export type MouseEventType = Event & {currentTarget: EventTarget & (HTMLButtonElement|HTMLAnchorElement)}
 export type FormEventType = Event & {currentTarget: EventTarget & HTMLFormElement}
 
+type ClassicalMechanicsStates = 'force'|'speed'
 export interface IClassicalMechanics {
-    force: Record<'m'|'a'|'F', number>
+    state: {
+        [key in ClassicalMechanicsStates]: {
+            [key: string]: number|boolean
+        }
+    }
+    props: {
+        subjectId: keyof IClassicalMechanics['state'], 
+        params: string[], 
+        placeholders: string[], 
+        operator: string, 
+    },
 }
