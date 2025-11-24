@@ -1,5 +1,5 @@
 <script lang="ts">
-    const suggestionExample = 'terkadang apabila'
+    const suggestionExample = 'belom jadi, fitur repot ntaran bae ygy :stonks:'
 </script>
 
 <div class="flex flex-col gap-2 p-1 col-span-12 md:col-span-9 lg:col-span-9">

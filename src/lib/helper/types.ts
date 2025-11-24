@@ -4,3 +4,7 @@ export interface IMiscContext {
 
 export type MouseEventType = Event & {currentTarget: EventTarget & (HTMLButtonElement|HTMLAnchorElement)}
 export type FormEventType = Event & {currentTarget: EventTarget & HTMLFormElement}
+
+export interface IClassicalMechanics {
+    force: Record<'m'|'a'|'F', number>
+}
