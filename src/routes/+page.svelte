@@ -3,9 +3,4 @@
 
 </script>
 
-<!-- html head -->
-<svelte:head>
-    <title> Fisicka </title>
-</svelte:head>
-
 <MainPage />

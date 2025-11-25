@@ -17,4 +17,20 @@ export const cp = $state<IClassicalMechanics['state']>({
         status_t: false,
         status_v: false,
     },
+    kinetic_energy: {
+        value_m: 0,
+        value_v: 0,
+        value_Ek: 0,
+        status_m: false,
+        status_v: false,
+        status_Ek: false,
+    },
+    potential_energy: {
+        value_m: 0,
+        value_h: 0,
+        value_Ep: 0,
+        status_m: false,
+        status_h: false,
+        status_Ep: false,
+    }
 })

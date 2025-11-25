@@ -11,7 +11,7 @@
     <div class="flex flex-col items-center">
         <label for={`${subjectId}_${params[0]}`}> {params[0]} </label>
         <input type="text" 
-            class="border border-green-400 px-1 w-24" 
+            class="border border-green-400 px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[0]}`} 
             bind:value={cp[subjectId][`value_${params[0]}`]} 
             placeholder={placeholders[0]} 
@@ -24,7 +24,7 @@
     <div class="flex flex-col items-center">
         <label for={`${subjectId}_${params[1]}`}> {params[1]} </label>
         <input type="text" 
-            class="border border-green-400 px-1 w-24" 
+            class="border border-green-400 px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[1]}`} 
             bind:value={cp[subjectId][`value_${params[1]}`]} 
             placeholder={placeholders[1]} 
@@ -37,7 +37,7 @@
     <div class="flex flex-col items-center">
         <label for={`${subjectId}_${params[2]}`}> {params[2]} </label>
         <input type="text" 
-            class="border border-green-400 px-1 w-24" 
+            class="border border-green-400 px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[2]}`} 
             bind:value={cp[subjectId][`value_${params[2]}`]} 
             placeholder={placeholders[2]} 

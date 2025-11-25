@@ -1,0 +1,8 @@
+/* classical mechanics formula sprites */
+.formula-kinetic-energy, .formula-potential-energy, .formula-speed, .formula-force
+{ max-width: 100%; background-size: 100%; background-image: url('../lib/assets/classical-physics/classical-mechanics/classic_mechanics_formulas.png'); }
+ 
+.formula-kinetic-energy { background-position: 0 0%; background-size: 100%; }
+.formula-potential-energy { background-position: 0 34.120735%; background-size: 104.6875%; }
+.formula-speed { background-position: 0 71.428571%; background-size: 113.559322%; }
+.formula-force { background-position: 0 100%; background-size: 118.934911%; }

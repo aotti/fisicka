@@ -1,18 +1,50 @@
 {
+    "keys": {
+        "force": "",
+        "speed": "",
+        "kinetic_energy": "",
+        "potential_energy": ""
+    },
     "list": [
         {
             "id": "force",
             "subject": "Gaya",
+            "symbol": "(simbol F)",
             "description": "Cabang fisika yang mempelajari gerak benda-benda makroskopis di bawah pengaruh gaya, berdasarkan hukum gerak Newton. Konsep utamanya adalah gaya, yang merupakan interaksi (tarikan atau dorongan) yang menyebabkan perubahan kecepatan suatu benda.",
+            "formulaImage": "formula-force",
+            "operator": "*",
             "formInputs": ["m", "a", "F"],
             "formPlaceholders": ["massa", "percepatan", "gaya"]
         },
         {
             "id": "speed",
             "subject": "Kecepatan",
-            "description": "Cabang fisika yang mempelajari gerak benda sehari-hari, di mana kecepatan adalah besaran yang menjelaskan laju perubahan jarak benda terhadap waktu. (m/s = meter per second)",
+            "symbol": "(simbol v)",
+            "description": "Cabang fisika yang mempelajari gerak benda sehari-hari, di mana kecepatan adalah besaran yang menjelaskan laju perubahan jarak benda terhadap waktu.",
+            "formulaImage": "formula-speed",
+            "operator": "/",
             "formInputs": ["d", "t", "v"],
             "formPlaceholders": ["jarak", "waktu", "kecepatan"]
+        },
+        {
+            "id": "kinetic_energy",
+            "subject": "Energi Kinetik",
+            "symbol": "(simbol KE, Ek, K, T)",
+            "description": "Energi yang dimiliki benda karena bergerak, seperti meluncur, berputar, atau berayun. Energi ini merupakan komponen penting dari energi mekanik (bersama energi potensial) dan meningkat seiring bertambahnya kecepatan atau massa benda.",
+            "formulaImage": "formula-kinetic-energy",
+            "operator": "*",
+            "formInputs": ["m", "v", "Ek"],
+            "formPlaceholders": ["massa", "kecepatan", "energi kinetik"]
+        },
+        {
+            "id": "potential_energy",
+            "subject": "Energi Potensial",
+            "symbol": "(simbol PE, Ep, U, V)",
+            "description": "Energi yang dimiliki benda karena posisinya terhadap medan gravitasi. Semakin tinggi posisinya, semakin besar energi potensialnya. Ada dua jenis energi potensial:\n- energi potensial gravitasi, yang berkaitan dengan ketinggian benda di medan gravitasi,\n- energi potensial elastis, yang tersimpan dalam benda yang diregangkan atau ditekan seperti pegas.",
+            "formulaImage": "formula-potential-energy",
+            "operator": "*",
+            "formInputs": ["m", "h", "Ep"],
+            "formPlaceholders": ["massa", "tinggi", "energi potensial"]
         }
     ]
 }

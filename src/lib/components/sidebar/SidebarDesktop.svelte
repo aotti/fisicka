@@ -8,7 +8,7 @@
     }
 </script>
 
-<div class="hidden md:col-span-2 md:flex md:flex-col lg:col-span-2 lg:flex lg:flex-col bg-darkgreen-1 p-1">
+<div class="hidden md:col-span-2 md:flex md:flex-col md:gap-2 lg:col-span-2 lg:flex lg:flex-col lg:gap-2 bg-darkgreen-1 p-1">
     <!-- category title -->
     <span> daftar kategori </span>
     <!-- category list -->

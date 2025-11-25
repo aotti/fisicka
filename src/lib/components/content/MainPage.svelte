@@ -14,12 +14,12 @@
     }
 </script>
 
-<div class="bg-darkgreen-2 text-white h-screen">
+<div class="bg-darkgreen-2 text-white">
     <!-- header -->
     <HeaderContent />
 
     <!-- main -->
-    <div class="grid grid-cols-12">
+    <div class="grid grid-cols-12 py-2">
         <!-- sidebar -->
         <SidebarDesktop />
         <SidebarMobile />

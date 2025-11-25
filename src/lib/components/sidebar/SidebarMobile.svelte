@@ -12,7 +12,7 @@
 
 <div class={`fixed top-0 overflow-clip ${extendSidebar ? 'w-max' : 'w-12 h-10'}
 md:hidden lg:hidden bg-darkgreen-1`}>
-    <div class="flex flex-col w-max border-r border-b" use:clickOutside={() => extendSidebar = false}>
+    <div class="flex flex-col gap-2 w-max border-r border-b" use:clickOutside={() => extendSidebar = false}>
         <!-- category button -->
         <button type="button" class="px-1 w-fit bg-darkgreen-4/50 hover:bg-darkgreen-1" onclick={() => extendSidebar = !extendSidebar}>
             <img src="https://img.icons8.com/?id=95245&format=png&color=FFFFFF&size=40" alt="sidebar-mobile" class="inline">

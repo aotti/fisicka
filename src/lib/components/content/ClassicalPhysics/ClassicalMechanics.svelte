@@ -1,10 +1,11 @@
 <script lang="ts">
     import type { MouseEventType } from "$lib/helper/types";
-    import ClassicalMechanicsForm from "./components/ClassicalMechanicsForm.svelte";
-    import { formulaForce, formulaSpeed } from "./helper/classical-mechanics.svelte";
-    import classical_mechanics from "./config/classical-mechanics.json"
+    import ClassicalMechanicsForm1 from "./components/ClassicalMechanicsForm1.svelte";
+    import { formulaForce, formulaKineticEnergy, formulaPotentialEnergy, formulaSpeed } from "./helper/classical-mechanics-formulas.svelte";
+    import classical_mechanics_data from "./config/classical-mechanics.json"
+    import transparent_image from "$lib/assets/transparent.png"
 
-    const classicalMechanicsData = classical_mechanics.list
+    const classicalMechanicsData = classical_mechanics_data.list
 
     let currentSubject = $state<string>(null)
     function currentSubjectHandler(ev: MouseEventType) {
@@ -14,6 +15,8 @@
     $effect(() => {
         formulaForce()
         formulaSpeed()
+        formulaKineticEnergy()
+        formulaPotentialEnergy()
     })
 </script>
 
@@ -25,8 +28,8 @@
     </p>
     <!-- body -->
     <!-- list of subjects -->
-    <ul class="py-1 px-8 list-decimal [&>li]:underline w-fit border">
-        <span> daftar materi </span>
+    <ul class="py-1 px-8 list-decimal w-fit border [&>li]:underline [&>li]:mt-1">
+        <span id="subject_list"> daftar materi </span>
         {#each classicalMechanicsData as cm}
             <li><a href={`#${cm.id}`} id={cm.id} onclick={currentSubjectHandler}> {cm.subject} </a></li>
         {/each}
@@ -36,10 +39,25 @@
         <!-- content item -->
         {#each classicalMechanicsData as cm}
             <div id={cm.id}>
-                <!-- title & desc -->
-                <span class={currentSubject == cm.id ? 'bg-darkgreen-4/50' : ''}> # {cm.subject} </span>
-                <p> {cm.description} </p>
-                <ClassicalMechanicsForm subjectId={cm.id} params={cm.formInputs} placeholders={cm.formPlaceholders} operator={'*'} />
+                <!-- title -->
+                <p class={currentSubject == cm.id ? 'bg-darkgreen-4/50' : ''}> 
+                    <span class="font-semibold"> # {cm.subject} </span> 
+                    <span> {cm.symbol} </span>
+                </p>
+                <div class="grid grid-cols-12">
+                    <!-- description -->
+                    <p class="col-span-8 whitespace-pre-line"> {cm.description} </p>
+                    <!-- formula image -->
+                    <img src={transparent_image} alt={`${cm.id}-formula`} class={`${cm.formulaImage} col-span-4 w-52 h-32`} draggable="false">
+                </div>
+                <!-- formula form -->
+                <ClassicalMechanicsForm1 
+                    subjectId={cm.id} 
+                    params={cm.formInputs} 
+                    placeholders={cm.formPlaceholders} 
+                    operator={cm.operator} />
+                <!-- return to top button -->
+                <p class="text-right underline mt-5"><a href="#subject_list"> kembali ke daftar materi </a></p>
             </div>
         {/each}
     </div>
