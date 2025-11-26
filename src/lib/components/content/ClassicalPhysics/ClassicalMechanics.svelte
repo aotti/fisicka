@@ -3,10 +3,10 @@
     import ClassicalMechanicsForm1 from "./components/ClassicalMechanicsForm1.svelte";
     import { formulaForce, formulaKineticEnergy, formulaPotentialEnergy, formulaSpeed } from "./helper/classical-mechanics-formulas.svelte";
     import classical_mechanics_data from "./config/classical-mechanics.json"
-    import transparent_image from "$lib/assets/transparent.png"
+    import { Math } from "svelte-math"
 
     const classicalMechanicsData = classical_mechanics_data.list
-
+    
     let currentSubject = $state<string>(null)
     function currentSubjectHandler(ev: MouseEventType) {
         currentSubject = ev.currentTarget.id
@@ -44,11 +44,27 @@
                     <span class="font-semibold"> # {cm.subject} </span> 
                     <span> {cm.symbol} </span>
                 </p>
-                <div class="grid grid-cols-12">
+                <!-- desktop version -->
+                <div class="hidden md:grid md:grid-cols-12 lg:grid lg:grid-cols-12">
                     <!-- description -->
                     <p class="col-span-8 whitespace-pre-line"> {cm.description} </p>
                     <!-- formula image -->
-                    <img src={transparent_image} alt={`${cm.id}-formula`} class={`${cm.formulaImage} col-span-4 w-52 h-32`} draggable="false">
+                    <div class="col-span-4 flex flex-col px-2 border">
+                        {#each cm.formulaLatex.split(';') as formula, i}
+                            <p class={i == 0 ? 'text-center text-xl' : ''}><Math> {formula} </Math></p>
+                        {/each}
+                    </div>
+                </div>
+                <!-- mobile version -->
+                <div class="flex flex-col gap-2 md:hidden lg:hidden">
+                    <!-- description -->
+                    <p class="whitespace-pre-line"> {cm.description} </p>
+                    <!-- formula image -->
+                    <div class="flex flex-col px-2 py-1 border">
+                        {#each cm.formulaLatex.split(';') as formula, i}
+                            <p class={i == 0 ? 'text-center text-xl' : ''}><Math> {formula.replaceAll(' ', '~')} </Math></p>
+                        {/each}
+                    </div>
                 </div>
                 <!-- formula form -->
                 <ClassicalMechanicsForm1 

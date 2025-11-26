@@ -1,12 +1,13 @@
 <script lang="ts">
     import type { IClassicalMechanics } from "$lib/helper/types";
     import { cp } from "../helper/classical-mechanics-states.svelte";
+    
     const getProps = $props() 
     const {subjectId, params, placeholders, operator} = getProps as IClassicalMechanics['props']
 </script>
 
 <!-- formula form -->
-<form class="flex gap-2" onsubmit={ev => ev.preventDefault()}>
+<form class="flex gap-2 mt-2" onsubmit={ev => ev.preventDefault()}>
     <!-- input 1 -->
     <div class="flex flex-col items-center">
         <label for={`${subjectId}_${params[0]}`}> {params[0]} </label>
@@ -17,8 +18,8 @@
             placeholder={placeholders[0]} 
             onblur={() => cp[subjectId][`status_${params[0]}`] = true}>
     </div>
-    <!-- operator -->
-    <span> {operator} </span>
+    <!-- equal -->
+    <span class="border-t border-b my-auto w-4 h-2"></span>
     
     <!-- input 2 -->
     <div class="flex flex-col items-center">
@@ -30,9 +31,9 @@
             placeholder={placeholders[1]} 
             onblur={() => cp[subjectId][`status_${params[1]}`] = true}>
     </div>
-    <!-- equal -->
-    <span class="border-t border-b my-auto w-4 h-2"></span>
-
+    <!-- operator -->
+    <span> {operator} </span>
+    
     <!-- input 3 -->
     <div class="flex flex-col items-center">
         <label for={`${subjectId}_${params[2]}`}> {params[2]} </label>
