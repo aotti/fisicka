@@ -51,7 +51,7 @@
                     <!-- formula image -->
                     <div class="col-span-4 flex flex-col px-2 border">
                         {#each cm.formulaLatex.split(';') as formula, i}
-                            <p class={i == 0 ? 'text-center text-xl' : ''}><Math> {formula} </Math></p>
+                            <p class={i == 0 ? 'text-center text-xl' : ''}><Math> {formula.replaceAll(' ', '~')} </Math></p>
                         {/each}
                     </div>
                 </div>
