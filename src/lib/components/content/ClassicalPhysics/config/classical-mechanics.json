@@ -28,7 +28,7 @@
             "description": "Cabang fisika yang mempelajari gerak benda sehari-hari, di mana kecepatan adalah besaran yang menjelaskan laju perubahan jarak benda terhadap waktu.",
             "formulaLatex": [
                 "v = \\frac{\\Delta s}{t}",
-                "v = kecepatan (m/s) /converter_vd_m/s,km/h",
+                "v = kecepatan (m/s) /converter__v,d__m/s,km/h",
                 "d/s = jarak (meter)",
                 "t = waktu (second)"
             ],
@@ -43,7 +43,7 @@
             "description": "Energi yang dimiliki benda karena bergerak, seperti meluncur, berputar, atau berayun. Energi ini merupakan komponen penting dari energi mekanik (bersama energi potensial) dan meningkat seiring bertambahnya kecepatan atau massa benda.",
             "formulaLatex": [
                 "Ek = \\frac{1}{2} . m . v^2",
-                "Ek = energi kinetik (Joule)",
+                "Ek = energi kinetik (Joule) /converter__Ek__Joule,KiloJoule",
                 "m = massa/berat (kg)",
                 "v = kecepatan (m/s)",
                 "*nilai \\color{green}v \\color{white}otomatis kuadrat"
@@ -59,7 +59,7 @@
             "description": "Energi yang dimiliki benda karena posisinya terhadap medan gravitasi. Semakin tinggi posisinya, semakin besar energi potensialnya. Ada 2 jenis energi potensial:\n- Ep gravitasi, berkaitan dengan ketinggian benda di medan gravitasi,\n- Ep elastis, tersimpan dalam benda yang diregangkan atau ditekan seperti pegas.",
             "formulaLatex": [
                 "U_g = m . g . h",
-                "U_g = energi potensial _{gravitasi} (Joule)",
+                "U_g = energi potensial _{gravitasi} (Joule) /converter__Ep__Joule,KiloJoule",
                 "m = massa/berat (kg)",
                 "g = gravitasi (9.8 m/s)",
                 "h = ketinggian (meter)",

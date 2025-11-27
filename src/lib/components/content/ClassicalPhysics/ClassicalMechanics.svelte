@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { MouseEventType } from "$lib/helper/types";
-    import FormulaCalc3Inputs from "../FormulaCalculators/FormulaCalc3Inputs.svelte";
+    import FormulaCalcInput3 from "../FormulaCalculators/FormulaCalcInput3.svelte";
     import classical_mechanics_data from "./config/classical-mechanics.json"
     import ClassicalMechanicsDesc from "./components/ClassicalMechanicsDesc.svelte";
 
@@ -8,7 +8,7 @@
     
     let currentSubject = $state<string>(null)
     function currentSubjectHandler(ev: MouseEventType) {
-        currentSubject = ev.currentTarget.id
+        currentSubject = ev.currentTarget.title
     }
 </script>
 
@@ -23,7 +23,7 @@
     <ul class="py-1 px-8 list-decimal w-fit border [&>li]:underline [&>li]:mt-1">
         <span id="subject_list"> daftar materi </span>
         {#each classicalMechanicsData as cm}
-            <li><a href={`#${cm.id}`} id={cm.id} onclick={currentSubjectHandler}> {cm.subject} </a></li>
+            <li><a href={`#${cm.id}`} title={cm.id} onclick={currentSubjectHandler}> {cm.subject} </a></li>
         {/each}
     </ul>
     <!-- content list -->
@@ -39,7 +39,7 @@
                 <!-- description and formula -->
                 <ClassicalMechanicsDesc cmd={cmd} />
                 <!-- formula calculator -->
-                <FormulaCalc3Inputs 
+                <FormulaCalcInput3 
                     subjectId={cmd.id} 
                     params={cmd.formInputs} 
                     placeholders={cmd.formPlaceholders} 

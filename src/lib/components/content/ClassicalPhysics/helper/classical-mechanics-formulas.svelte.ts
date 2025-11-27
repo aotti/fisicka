@@ -3,10 +3,11 @@ import { cm } from "./classical-mechanics-states.svelte"
 
 export function formulaUnitConverter(ev: OnChangeEventType) {
     type FormulaUnitConverterType = [keyof IClassicalMechanics['state'], string, string]
-    const [formulaTarget, _, formulaUnits] = ev.currentTarget.id.split('_') as FormulaUnitConverterType
+    const [formulaTarget, _, formulaUnits] = ev.currentTarget.id.split('__') as FormulaUnitConverterType
     const currentUnitList = ev.currentTarget.value
+            
 
-    for(let unit of formulaUnits) {
+    for(let unit of formulaUnits.split(',')) {
         if(formulaTarget == 'speed') {
             // only velocity AND distance get converts
             switch(unit) {
@@ -16,6 +17,18 @@ export function formulaUnitConverter(ev: OnChangeEventType) {
                         ? cm[formulaTarget][`value_${unit}`] = +cm[formulaTarget][`value_${unit}`] * 3.6
                         // convert to m/s
                         : cm[formulaTarget][`value_${unit}`] = +cm[formulaTarget][`value_${unit}`] / 3.6
+                    break
+            }
+        }
+        else if(formulaTarget == 'kinetic_energy' || formulaTarget == 'potential_energy') {
+            // only energy get convert
+            switch(unit) {
+                case 'Ek': case 'Ep':
+                    currentUnitList == 'KiloJoule'
+                        // convert to kilo joule
+                        ? cm[formulaTarget][`value_${unit}`] = +cm[formulaTarget][`value_${unit}`] / 1000
+                        // convert to joule
+                        : cm[formulaTarget][`value_${unit}`] = +cm[formulaTarget][`value_${unit}`] * 1000
                     break
             }
         }
