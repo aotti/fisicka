@@ -24,7 +24,7 @@ export function formulaUnitConverter(ev: OnChangeEventType) {
             // only energy get convert
             switch(unit) {
                 case 'Ek': case 'Ep':
-                    currentUnitList == 'KiloJoule'
+                    currentUnitList == 'KJ'
                         // convert to kilo joule
                         ? cm[formulaTarget][`value_${unit}`] = +cm[formulaTarget][`value_${unit}`] / 1000
                         // convert to joule
