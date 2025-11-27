@@ -6,6 +6,7 @@ export interface IMiscContext {
 
 export type MouseEventType = Event & {currentTarget: EventTarget & (HTMLButtonElement|HTMLAnchorElement)}
 export type FormEventType = Event & {currentTarget: EventTarget & HTMLFormElement}
+export type OnChangeEventType = Event & {currentTarget: EventTarget & HTMLSelectElement}
 
 type ClassicalMechanicsStates = keyof typeof classical_mechanics_data.keys
 export interface IClassicalMechanics {

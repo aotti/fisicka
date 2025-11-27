@@ -1,6 +1,5 @@
 <script lang="ts">
 	import './layout.css';
-	import './classical-physics.css';
 	import favicon from '$lib/assets/favicon.png';
 	
 	let { children } = $props();

@@ -1,9 +1,18 @@
 <script lang="ts">
     import type { IClassicalMechanics } from "$lib/helper/types";
-    import { cp } from "../helper/classical-mechanics-states.svelte";
+    import { cm } from "../ClassicalPhysics/helper/classical-mechanics-states.svelte";
+    import { formulaForce, formulaKineticEnergy, formulaPotentialEnergy, formulaSpeed } from "../ClassicalPhysics/helper/classical-mechanics-formulas.svelte";
     
+    // use this code to get multiple props without error 
     const getProps = $props() 
     const {subjectId, params, placeholders, operator} = getProps as IClassicalMechanics['props']
+
+    $effect(() => {
+        formulaForce()
+        formulaSpeed()
+        formulaKineticEnergy()
+        formulaPotentialEnergy()
+    })
 </script>
 
 <!-- formula form -->
@@ -14,9 +23,9 @@
         <input type="text" 
             class="border border-green-400 px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[0]}`} 
-            bind:value={cp[subjectId][`value_${params[0]}`]} 
+            bind:value={cm[subjectId][`value_${params[0]}`]} 
             placeholder={placeholders[0]} 
-            onblur={() => cp[subjectId][`status_${params[0]}`] = true}>
+            onblur={() => cm[subjectId][`status_${params[0]}`] = true}>
     </div>
     <!-- equal -->
     <span class="border-t border-b my-auto w-4 h-2"></span>
@@ -27,9 +36,9 @@
         <input type="text" 
             class="border border-green-400 px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[1]}`} 
-            bind:value={cp[subjectId][`value_${params[1]}`]} 
+            bind:value={cm[subjectId][`value_${params[1]}`]} 
             placeholder={placeholders[1]} 
-            onblur={() => cp[subjectId][`status_${params[1]}`] = true}>
+            onblur={() => cm[subjectId][`status_${params[1]}`] = true}>
     </div>
     <!-- operator -->
     <span> {operator} </span>
@@ -40,8 +49,8 @@
         <input type="text" 
             class="border border-green-400 px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[2]}`} 
-            bind:value={cp[subjectId][`value_${params[2]}`]} 
+            bind:value={cm[subjectId][`value_${params[2]}`]} 
             placeholder={placeholders[2]} 
-            onblur={() => cp[subjectId][`status_${params[2]}`] = true}>
+            onblur={() => cm[subjectId][`status_${params[2]}`] = true}>
     </div>
 </form>

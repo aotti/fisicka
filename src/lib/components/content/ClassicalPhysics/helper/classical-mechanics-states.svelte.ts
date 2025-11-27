@@ -1,6 +1,6 @@
 import type { IClassicalMechanics } from "$lib/helper/types";
 
-export const cp = $state<IClassicalMechanics['state']>({
+export const cm = $state<IClassicalMechanics['state']>({
     force: {
         value_m: 0,
         value_a: 0,

@@ -11,7 +11,12 @@
             "subject": "Gaya",
             "symbol": "(simbol F)",
             "description": "Cabang fisika yang mempelajari gerak benda-benda makroskopis di bawah pengaruh gaya, berdasarkan hukum gerak Newton. Konsep utamanya adalah gaya, yang merupakan interaksi (tarikan atau dorongan) yang menyebabkan perubahan kecepatan suatu benda.",
-            "formulaLatex": "F = m . a;F = gaya;m = massa/berat (kg);a = percepatan (m/s^2)",
+            "formulaLatex": [
+                "F = m . a",
+                "F = gaya",
+                "m = massa/berat (kg)",
+                "a = percepatan (m/s^2)"
+            ],
             "operator": "*",
             "formInputs": ["F", "m", "a"],
             "formPlaceholders": ["gaya", "massa", "percepatan"]
@@ -21,7 +26,12 @@
             "subject": "Kecepatan",
             "symbol": "(simbol v)",
             "description": "Cabang fisika yang mempelajari gerak benda sehari-hari, di mana kecepatan adalah besaran yang menjelaskan laju perubahan jarak benda terhadap waktu.",
-            "formulaLatex": "v = \\frac{\\Delta s}{t};v = kecepatan (m/s);d/s = jarak (meter);t = waktu (second)",
+            "formulaLatex": [
+                "v = \\frac{\\Delta s}{t}",
+                "v = kecepatan (m/s) /converter_vd_m/s,km/h",
+                "d/s = jarak (meter)",
+                "t = waktu (second)"
+            ],
             "operator": "/",
             "formInputs": ["v", "d", "t"],
             "formPlaceholders": ["kecepatan", "jarak", "waktu"]
@@ -31,7 +41,13 @@
             "subject": "Energi Kinetik",
             "symbol": "(simbol KE, Ek, K, T)",
             "description": "Energi yang dimiliki benda karena bergerak, seperti meluncur, berputar, atau berayun. Energi ini merupakan komponen penting dari energi mekanik (bersama energi potensial) dan meningkat seiring bertambahnya kecepatan atau massa benda.",
-            "formulaLatex": "Ek = \\frac{1}{2} . m . v^2;Ek = energi kinetik (Joule);m = massa/berat (kg);v = kecepatan (m/s);*nilai \\color{green}v \\color{white}otomatis kuadrat",
+            "formulaLatex": [
+                "Ek = \\frac{1}{2} . m . v^2",
+                "Ek = energi kinetik (Joule)",
+                "m = massa/berat (kg)",
+                "v = kecepatan (m/s)",
+                "*nilai \\color{green}v \\color{white}otomatis kuadrat"
+            ],
             "operator": "*",
             "formInputs": ["Ek", "m", "v"],
             "formPlaceholders": ["energi kinetik", "massa", "kecepatan"]
@@ -40,8 +56,15 @@
             "id": "potential_energy",
             "subject": "Energi Potensial",
             "symbol": "(simbol PE, Ep, U, V)",
-            "description": "Energi yang dimiliki benda karena posisinya terhadap medan gravitasi. Semakin tinggi posisinya, semakin besar energi potensialnya. Ada dua jenis energi potensial:\n- energi potensial gravitasi, yang berkaitan dengan ketinggian benda di medan gravitasi,\n- energi potensial elastis, yang tersimpan dalam benda yang diregangkan atau ditekan seperti pegas.",
-            "formulaLatex": "U_g = m . g . h;U_g = energi potensial _{gravitasi} (Joule);m = massa/berat (kg);g = gravitasi (9.8 m/s);h = ketinggian (meter);*nilai \\color{green}g\\color{white} konstan, jadi gk ada input box",
+            "description": "Energi yang dimiliki benda karena posisinya terhadap medan gravitasi. Semakin tinggi posisinya, semakin besar energi potensialnya. Ada 2 jenis energi potensial:\n- Ep gravitasi, berkaitan dengan ketinggian benda di medan gravitasi,\n- Ep elastis, tersimpan dalam benda yang diregangkan atau ditekan seperti pegas.",
+            "formulaLatex": [
+                "U_g = m . g . h",
+                "U_g = energi potensial _{gravitasi} (Joule)",
+                "m = massa/berat (kg)",
+                "g = gravitasi (9.8 m/s)",
+                "h = ketinggian (meter)",
+                "*nilai \\color{green}g\\color{white} konstan, jadi gk ada input box"
+            ],
             "operator": "*",
             "formInputs": ["Ep", "m", "h"],
             "formPlaceholders": ["energi potensial", "massa", "tinggi"]
