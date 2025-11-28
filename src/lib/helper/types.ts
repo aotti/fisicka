@@ -4,6 +4,12 @@ export interface IMiscContext {
     currentPage: string
 }
 
+export interface IMathOperation {
+    subject: ClassicalMechanicsStates,
+    unitList: string[],
+    operator: '+'|'-'|'*'|'/'|`pow-${number}`|'sqrt',
+}
+
 export type MouseEventType = Event & {currentTarget: EventTarget & (HTMLButtonElement|HTMLAnchorElement)}
 export type FormEventType = Event & {currentTarget: EventTarget & HTMLFormElement}
 export type OnChangeEventType = Event & {currentTarget: EventTarget & HTMLSelectElement}
@@ -12,7 +18,7 @@ type ClassicalMechanicsStates = keyof typeof classical_mechanics_data.keys
 export interface IClassicalMechanics {
     state: {
         [key in ClassicalMechanicsStates]: {
-            [key: string]: number|boolean
+            [key: string]: number|boolean|HTMLElement
         }
     }
     props: {

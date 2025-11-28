@@ -2,6 +2,7 @@
     "keys": {
         "force": "",
         "speed": "",
+        "acceleration": "",
         "kinetic_energy": "",
         "potential_energy": ""
     },
@@ -37,6 +38,22 @@
             "formPlaceholders": ["kecepatan", "jarak", "waktu"]
         },
         {
+            "id": "acceleration",
+            "subject": "Percepatan",
+            "symbol": "(simbol a)",
+            "description": "Laju perubahan kecepatan suatu benda terhadap waktu. Ini adalah vektor, yang berarti memiliki nilai dan arah, dan dapat terjadi saat kecepatan benda bertambah (akselerasi) atau berkurang (perlambatan). ",
+            "formulaLatex": [
+                "a = \\frac{v_1 - v_0}{t}",
+                "a = percepatan (m/s^2)",
+                "v_0 = kecepatan awal (m/s)",
+                "v_1 = kecepatan akhir (m/s)",
+                "t = waktu (second)"
+            ],
+            "operator": "-/",
+            "formInputs": ["a", "v1", "v0", "t"],
+            "formPlaceholders": ["percepatan", "kecepatan awal", "kecepatan akhir", "waktu"]
+        },
+        {
             "id": "kinetic_energy",
             "subject": "Energi Kinetik",
             "symbol": "(simbol KE, Ek, K, T)",
@@ -61,7 +78,7 @@
                 "U_g = m . g . h",
                 "U_g = energi potensial _{gravitasi} (Joule) /converter__Ep__J,KJ",
                 "m = massa/berat (kg)",
-                "g = gravitasi (9.8 m/s)",
+                "g = gravitasi (9.8 m/s^2)",
                 "h = ketinggian (meter)",
                 "*nilai \\color{green}g\\color{white} konstan, jadi gk ada input box"
             ],

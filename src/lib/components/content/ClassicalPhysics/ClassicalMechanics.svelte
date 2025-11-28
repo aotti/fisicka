@@ -3,6 +3,7 @@
     import FormulaCalcInput3 from "../FormulaCalculators/FormulaCalcInput3.svelte";
     import classical_mechanics_data from "./config/classical-mechanics.json"
     import ClassicalMechanicsDesc from "./components/ClassicalMechanicsDesc.svelte";
+    import FormulaCalcInput4 from "../FormulaCalculators/FormulaCalcInput4.svelte";
 
     const classicalMechanicsData = classical_mechanics_data.list
     
@@ -39,11 +40,19 @@
                 <!-- description and formula -->
                 <ClassicalMechanicsDesc cmd={cmd} />
                 <!-- formula calculator -->
-                <FormulaCalcInput3 
-                    subjectId={cmd.id} 
-                    params={cmd.formInputs} 
-                    placeholders={cmd.formPlaceholders} 
-                    operator={cmd.operator} />
+                {#if cmd.formInputs.length === 3}
+                    <FormulaCalcInput3 
+                        subjectId={cmd.id} 
+                        params={cmd.formInputs} 
+                        placeholders={cmd.formPlaceholders} 
+                        operator={cmd.operator} />
+                {:else}
+                    <FormulaCalcInput4 
+                        subjectId={cmd.id} 
+                        params={cmd.formInputs} 
+                        placeholders={cmd.formPlaceholders} 
+                        operator={cmd.operator} />
+                {/if}
                 <!-- return to top button -->
                 <p class="text-right underline mt-5"><a href="#subject_list"> kembali ke daftar materi </a></p>
             </div>
