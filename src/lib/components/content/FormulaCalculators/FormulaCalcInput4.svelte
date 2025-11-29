@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { IClassicalMechanics } from "$lib/helper/types";
+    import { formulaAcceleration } from "../ClassicalPhysics/helper/classical-mechanics-formulas.svelte";
     import { cm } from "../ClassicalPhysics/helper/classical-mechanics-states.svelte";
     
     // use this code to get multiple props without error 
@@ -7,7 +8,7 @@
     const {subjectId, params, placeholders, operator} = getProps as IClassicalMechanics['props']
 
     $effect(() => {
-        // 
+        formulaAcceleration()
     })
 </script>
 
@@ -19,6 +20,7 @@
         <input type="text" 
             class="border px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[0]}`} 
+            bind:this={cm[subjectId][`element_${params[0]}`]}
             bind:value={cm[subjectId][`value_${params[0]}`]} 
             placeholder={placeholders[0]} 
             onblur={() => cm[subjectId][`status_${params[0]}`] = true}>
@@ -32,6 +34,7 @@
         <input type="text" 
             class="border px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[1]}`} 
+            bind:this={cm[subjectId][`element_${params[1]}`]}
             bind:value={cm[subjectId][`value_${params[1]}`]} 
             placeholder={placeholders[1]} 
             onblur={() => cm[subjectId][`status_${params[1]}`] = true}>
@@ -45,6 +48,7 @@
         <input type="text" 
             class="border px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[2]}`} 
+            bind:this={cm[subjectId][`element_${params[2]}`]}
             bind:value={cm[subjectId][`value_${params[2]}`]} 
             placeholder={placeholders[2]} 
             onblur={() => cm[subjectId][`status_${params[2]}`] = true}>
@@ -58,6 +62,7 @@
         <input type="text" 
             class="border px-1 w-24 md:w-32 lg:w-32" 
             id={`${subjectId}_${params[3]}`} 
+            bind:this={cm[subjectId][`element_${params[3]}`]}
             bind:value={cm[subjectId][`value_${params[3]}`]} 
             placeholder={placeholders[3]} 
             onblur={() => cm[subjectId][`status_${params[3]}`] = true}>

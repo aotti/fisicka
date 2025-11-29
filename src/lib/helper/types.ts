@@ -7,7 +7,7 @@ export interface IMiscContext {
 export interface IMathOperation {
     subject: ClassicalMechanicsStates,
     unitList: string[],
-    operator: '+'|'-'|'*'|'/'|`pow-${number}`|'sqrt',
+    operator: '+'|'-'|'*'|'/'|`pow~${number}`|'sqrt',
 }
 
 export type MouseEventType = Event & {currentTarget: EventTarget & (HTMLButtonElement|HTMLAnchorElement)}
