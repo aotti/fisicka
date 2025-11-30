@@ -58,7 +58,7 @@ function formulaBorderHighlight(subject: keyof IClassicalMechanics['state'], uni
  * @returns 
  */
 function MathOperation(subject: IMathOperation['subject'], unitList: string[], operator: IMathOperation['operator']) {
-    const checkOperator = operator.match(/\+$|\-$|\*$|\/$|pow-\d+$|sqrt$/)
+    const checkOperator = operator.match(/\+$|\-$|\*$|\/$|pow~\d+$|sqrt$/)
     // only do math operation if it exist in the regex
     if(checkOperator) {
         let isConstantNumber = false
@@ -303,5 +303,55 @@ export function formulaPotentialEnergy() {
         const step2 = +MathOperation('potential_energy', ['Ep', `${step1}`], '/')
         cm.potential_energy.value_m = +step2.toFixed(3)
         formulaBorderHighlight('potential_energy', ['m','Ep','h'])
+    }
+}
+
+/**
+ * @description formula p = m * v
+ * state props (p, m, v)
+ * - element
+ * - value
+ * - status
+ */
+export function formulaMomentum() {
+    // p is unknown
+    if(cm.momentum.status_m && cm.momentum.status_v) {
+        cm.momentum.value_p = +MathOperation('momentum', ['m', 'v'], '*').toFixed(3)
+        formulaBorderHighlight('momentum', ['p','m','v'])
+    }
+    // m is unknown
+    else if(cm.momentum.status_p && cm.momentum.status_v) {
+        cm.momentum.value_m = +MathOperation('momentum', ['p', 'v'], '/').toFixed(3)
+        formulaBorderHighlight('momentum', ['m','p','v'])
+    }
+    // v is unknown
+    else if(cm.momentum.status_p && cm.momentum.status_m) {
+        cm.momentum.value_v = +MathOperation('momentum', ['p', 'm'], '/').toFixed(3)
+        formulaBorderHighlight('momentum', ['v','p','m'])
+    }
+}
+
+/**
+ * @description formula J = p2 - p1
+ * state props (J, p2, p1)
+ * - element
+ * - value
+ * - status
+ */
+export function formulaImpulse() {
+    // J is unknown
+    if(cm.impulse.status_p2 && cm.impulse.status_p1) {
+        cm.impulse.value_J = +MathOperation('impulse', ['p2', 'p1'], '-').toFixed(3)
+        formulaBorderHighlight('impulse', ['J','p2','p1'])
+    }
+    // p2 is unknown
+    else if(cm.impulse.status_J && cm.impulse.status_p1) {
+        cm.impulse.value_p2 = +MathOperation('impulse', ['J', 'p1'], '+').toFixed(3)
+        formulaBorderHighlight('impulse', ['p2','J','p1'])
+    }
+    // p1 is unknown
+    else if(cm.impulse.status_J && cm.impulse.status_p2) {
+        cm.impulse.value_p1 = +MathOperation('impulse', ['p2', 'J'], '-').toFixed(3)
+        formulaBorderHighlight('impulse', ['p1','J','p2'])
     }
 }

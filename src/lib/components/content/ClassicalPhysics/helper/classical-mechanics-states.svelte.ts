@@ -25,5 +25,15 @@ export const cm = $state<IClassicalMechanics['state']>({
         element_m: null, element_h: null, element_Ep: null,
         value_m: 0, value_h: 0, value_Ep: 0,
         status_m: false, status_h: false, status_Ep: false,
-    }
+    },
+    momentum: {
+        element_m: null, element_v: null, element_p: null,
+        value_m: 0, value_v: 0, value_p: 0,
+        status_m: false, status_v: false, status_p: false,
+    },
+    impulse: {
+        element_p2: null, element_p1: null, element_J: null,
+        value_p2: 0, value_p1: 0, value_J: 0,
+        status_p2: false, status_p1: false, status_J: false,
+    },
 })

@@ -4,7 +4,9 @@
         "speed": "",
         "acceleration": "",
         "kinetic_energy": "",
-        "potential_energy": ""
+        "potential_energy": "",
+        "momentum": "",
+        "impulse": ""
     },
     "list": [
         {
@@ -85,6 +87,36 @@
             "operator": "*",
             "formInputs": ["Ep", "m", "h"],
             "formPlaceholders": ["energi potensial", "massa", "tinggi"]
+        },
+        {
+            "id": "momentum",
+            "subject": "Momentum",
+            "symbol": "(simbol p)",
+            "description": "Konsep ini sangat penting untuk memahami gerak dan dinamika benda, terutama dalam menganalisis tumbukan dan menerapkan prinsip kekekalan momentum. Benda dengan massa lebih besar atau kecepatan lebih tinggi akan memiliki momentum lebih besar. Momentum digunakan untuk mengukur:\n- seberapa sulit menghentikan benda yang bergerak",
+            "formulaLatex": [
+                "p = m . v",
+                "p = momentum",
+                "m = massa/berat (kg)",
+                "v = kecepatan (m/s)"
+            ],
+            "operator": "*",
+            "formInputs": ["p", "m", "v"],
+            "formPlaceholders": ["momentum", "massa", "kecepatan"]
+        },
+        {
+            "id": "impulse",
+            "subject": "Impuls",
+            "symbol": "(simbol J, Imp)",
+            "description": "Perubahan momentum suatu benda yang terjadi ketika benda tersebut dikenai gaya selama selang waktu tertentu.",
+            "formulaLatex": [
+                "J = p_2  - p_1",
+                "J = impuls",
+                "p_2 = momentum akhir",
+                "p_1 = momentum awal"
+            ],
+            "operator": "-",
+            "formInputs": ["J", "p2", "p1"],
+            "formPlaceholders": ["impuls", "momentum akhir", "momentum awal"]
         }
     ]
 }

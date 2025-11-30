@@ -46,7 +46,7 @@
                         params={cmd.formInputs} 
                         placeholders={cmd.formPlaceholders} 
                         operator={cmd.operator} />
-                {:else}
+                {:else if cmd.formInputs.length === 4}
                     <FormulaCalcInput4 
                         subjectId={cmd.id} 
                         params={cmd.formInputs} 

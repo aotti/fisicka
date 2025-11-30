@@ -33,6 +33,7 @@
             {/each}
         </div>
     </div>
+    
     <!-- mobile version -->
     <div class="flex flex-col gap-2 md:hidden lg:hidden">
         <!-- description -->

@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { IClassicalMechanics } from "$lib/helper/types";
     import { cm } from "../ClassicalPhysics/helper/classical-mechanics-states.svelte";
-    import { formulaForce, formulaKineticEnergy, formulaPotentialEnergy, formulaSpeed } from "../ClassicalPhysics/helper/classical-mechanics-formulas.svelte";
+    import { formulaForce, formulaImpulse, formulaKineticEnergy, formulaMomentum, formulaPotentialEnergy, formulaSpeed } from "../ClassicalPhysics/helper/classical-mechanics-formulas.svelte";
     
     // use this code to get multiple props without error 
     const getProps = $props() 
@@ -12,11 +12,13 @@
         formulaSpeed()
         formulaKineticEnergy()
         formulaPotentialEnergy()
+        formulaMomentum()
+        formulaImpulse()
     })
 </script>
 
 <!-- formula form -->
-<form class="flex gap-2 mt-2" onsubmit={ev => ev.preventDefault()}>
+<form class="flex flex-wrap gap-2 mt-2" onsubmit={ev => ev.preventDefault()}>
     <!-- input 1 -->
     <div class="flex flex-col items-center">
         <label for={`${subjectId}_${params[0]}`}> {params[0]} </label>
